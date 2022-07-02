@@ -40,16 +40,16 @@ export default function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div style={{backgroundColor:"white", minHeight:"100vh"}}>
+    <div style={{backgroundColor:"#216E8C", minHeight:"100vh"}}>
       <Toolbar />
       <Divider />
       
       <List>
-        {[{words: 'Dashboard', link:"/", icon: <MdDashboard />},{words: 'User', link:"/user", icon: <MdPerson />},{words: 'Completed Transactions', link:"/adminuser", icon: <AiOutlineTransaction />},{words: 'Ongoing Transactions', link:"/ongoing", icon: <AiOutlineTransaction />},{words: 'Cancelled Transactions', link:"/cancelled", icon: <AiOutlineTransaction />},{words: ' Transactions based on time range', link:"/timebased", icon: <AiOutlineTransaction />}].map((text, index) => (
-          <Link to={text.link} style={{textDecoration:"none", color:"black"}}>
+        {[{words: 'Dashboard', link:"/", icon: <MdDashboard />},{words: 'User', link:"/user", icon: <MdPerson />},{words: 'Completed Transactions', link:"/completed", icon: <AiOutlineTransaction />},{words: 'Ongoing Transactions', link:"/ongoing", icon: <AiOutlineTransaction />},{words: 'Cancelled Transactions', link:"/cancelled", icon: <AiOutlineTransaction />},{words: ' Transactions based on time range', link:"/timebased", icon: <AiOutlineTransaction />}].map((text, index) => (
+          <Link to={text.link} style={{textDecoration:"none", color:"white"}}>
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon style={{fontSize:"30px", color:"black"}}>
+              <ListItemIcon style={{fontSize:"30px", color:"white"}}>
                 {index % 2 === 0 ? text.icon : text.icon}
               </ListItemIcon>
               <ListItemText primary={text.words} />
@@ -70,7 +70,7 @@ export default function ResponsiveDrawer(props) {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }, backgroundColor:"rgb(139,0,0)"
+          ml: { sm: `${drawerWidth}px` }, backgroundColor:"#216E8C"
         }}
       >
         <Toolbar>

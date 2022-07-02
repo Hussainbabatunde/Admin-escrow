@@ -31,7 +31,8 @@ const drawerWidth = 240;
 
 
 
-export default function Completed() {
+export default function Completed(props) {
+  const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -39,16 +40,14 @@ export default function Completed() {
   };
 
   const drawer = (
-    <div style={{backgroundColor:"white", minHeight:"100vh"}}>
-      <Toolbar />
-      <Divider />
+    <div style={{backgroundColor:"#216E8C", minHeight:"100vh"}}>
       
       <List>
         {[{words: 'Dashboard', link:"/", icon: <MdDashboard />},{words: 'User', link:"/user", icon: <MdPerson />},{words: 'Completed Transactions', link:"/completed", icon: <AiOutlineTransaction />},{words: 'Ongoing Transactions', link:"/ongoing", icon: <AiOutlineTransaction />},{words: 'Cancelled Transactions', link:"/cancelled", icon: <AiOutlineTransaction />},{words: ' Transactions based on time range', link:"/timebased", icon: <AiOutlineTransaction />}].map((text, index) => (
-          <Link to={text.link} style={{textDecoration:"none", color:"black"}}>
+          <Link to={text.link} style={{textDecoration:"none", color:"white"}}>
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon style={{fontSize:"30px", color:"black"}}>
+              <ListItemIcon style={{fontSize:"30px", color:"white"}}>
                 {index % 2 === 0 ? text.icon : text.icon}
               </ListItemIcon>
               <ListItemText primary={text.words} />
@@ -69,7 +68,7 @@ export default function Completed() {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },  backgroundColor:"rgb(139,0,0)"
+          ml: { sm: `${drawerWidth}px` },  backgroundColor:"#216E8C"
         }}
       >
         <Toolbar>

@@ -13,6 +13,18 @@
     display: flex;
     flex-direction: column;
 }
+
+element.style {
+    font-size: 30px;
+    color: black;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+    min-width: 0 !important;
+}
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
+    flex-direction: column !important;
+}
 @media (max-width: 600px) {
     .userdetails{
         width: 100%;
