@@ -197,6 +197,13 @@ export default function Timebased(props) {
             </tbody>
         </Table> */}
         {/* <EnhancedTable /> */}
+        <Box sx={{display:"flex", justifyContent:"flex-end", marginTop:"20px", marginRight:"20px"}}>
+            
+            <Box sx={{display:"flex", flexDirection:"row"}}>
+              <input type="text"/>
+              <button style={{border:"none", color:"white", backgroundColor:"#216E8C"}}>Search</button>
+            </Box>
+          </Box>
         <Newtable />
         </Box>
             </Box>

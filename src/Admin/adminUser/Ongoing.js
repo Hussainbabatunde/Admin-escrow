@@ -144,7 +144,14 @@ export default function Completed(props) {
         <Typography paragraph>
         <Box sx={{display:"flex", flexDirection:"column"}}>
         <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="80vh">
-        <Newtable/>
+        <Box sx={{display:"flex", justifyContent:"flex-end", marginTop:"20px", marginRight:"20px"}}>
+            
+            <Box sx={{display:"flex", flexDirection:"row"}}>
+              <input type="text"/>
+              <button style={{border:"none", color:"white", backgroundColor:"#216E8C"}}>Search</button>
+            </Box>
+          </Box>
+          <Newtable/>
         </Box>
             </Box>
         </Typography>
