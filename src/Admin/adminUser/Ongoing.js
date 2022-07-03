@@ -24,6 +24,9 @@ import {MdPerson, MdDashboard} from 'react-icons/md';
 import {AiTwotoneEdit, AiFillDelete} from 'react-icons/ai';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Newtable from './Newtable';
+
+
 import creative from "../images/creative.jpeg";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -141,37 +144,7 @@ export default function Completed(props) {
         <Typography paragraph>
         <Box sx={{display:"flex", flexDirection:"column"}}>
         <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="80vh">
-        <Table style={{width:"95%", marginLeft:"2.5%", marginTop:"20px"}}>
-            <thead>
-                <th style={{color:"gray"}}>ID</th>
-                <th style={{color:"gray"}}>Buyer's name</th>
-                <th style={{color:"gray"}}>Seller's name</th>
-                <th style={{color:"gray"}}>Witness name</th>
-                <th style={{color:"gray"}}>Transactionstatus</th>
-                <th style={{color:"gray"}}>Disbursement status</th>
-            </thead>
-            <tbody>
-                {/* {
-                    education.map((each, id)=>{
-                        return (
-                            <tr key={id}>
-                            <td>{each.certificate_name}</td>
-                            <td>{each.school_name}</td>
-                            <td>{each.year_earned}</td>
-                            </tr>
-                        )
-                    })
-                } */}
-                <tr >
-                  <td>1</td>
-                  <td>Tunde</td>
-                  <td>Segun</td>
-                  <td>Tolu</td>
-                  <td>Ongoing</td>
-                  <td>Ongoing</td>
-                  </tr>
-            </tbody>
-        </Table>
+        <Newtable/>
         </Box>
             </Box>
         </Typography>

@@ -67,3 +67,6 @@ element.style {
         flex-direction: column;
     }
 }
+p{
+    margin-bottom: 0 !important;
+}

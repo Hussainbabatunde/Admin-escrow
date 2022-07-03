@@ -24,6 +24,7 @@ import {MdPerson, MdDashboard} from 'react-icons/md';
 import {AiTwotoneEdit, AiFillDelete} from 'react-icons/ai';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Usertable from './Usertable';
 import creative from "../images/creative.jpeg";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -66,8 +67,11 @@ export default function Completed(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
+    <div style={{display:"flex", flexDirection:"column"}}>
+    
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+      
       <AppBar
         position="fixed"
         sx={{
@@ -138,83 +142,13 @@ export default function Completed(props) {
         <Typography paragraph>
         <Box sx={{display:"flex", flexDirection:"column"}}>
         <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="80vh">
-        <Table style={{width:"95%", marginLeft:"2.5%", marginTop:"20px"}}>
-            <thead>
-                <th style={{color:"gray"}}>ID</th>
-                <th style={{color:"gray"}}>Name</th>
-                <th style={{color:"gray"}}>Email</th>
-                <th style={{color:"gray"}}>Usertype</th>
-                <th style={{color:"gray"}}>Address</th>
-                <th style={{color:"gray"}} colSpan={2}>Action</th>
-            </thead>
-            <tbody>
-                {/* {
-                    education.map((each, id)=>{
-                        return (
-                            <tr key={id}>
-                            <td>{each.certificate_name}</td>
-                            <td>{each.school_name}</td>
-                            <td>{each.year_earned}</td>
-                            </tr>
-                        )
-                    })
-                } */}
-                <tr >
-                  <td>1</td>
-                  <td>tunde</td>
-                  <td>Unilag@mail.com</td>
-                  <td>Admin</td>
-                  <td>Lagos road,Nigeria.</td>
-                  <td>{['top'].map((placement) => (
-                        <OverlayTrigger
-                          key={placement}
-                          placement={placement}
-                          overlay={
-                            <Tooltip id={`tooltip-${placement}`}>
-                              Edit
-                            </Tooltip>
-                          }
-                        >
-                           <Link to={`/`}> 
-                           <button
-          style={{border:"none", backgroundColor:"white"}}
-          type='button'
-        >
-          <AiTwotoneEdit/>
-        </button>
-                           
-                          </Link>
-                        </OverlayTrigger>
-                      ))}</td>
-                      <td>{['top'].map((placement) => (
-                        <OverlayTrigger
-                          key={placement}
-                          placement={placement}
-                          overlay={
-                            <Tooltip id={`tooltip-${placement}`}>
-                              Delete
-                            </Tooltip>
-                          }
-                        >
-                           <Link to={`/`}> 
-                           <button
-          style={{border:"none", backgroundColor:"white"}}
-          type='button'
-        >
-          <AiFillDelete style={{color:"red"}}/>
-        </button>
-                            {/* <SiSamsungpay className='view_icon_tracker' /> */}
-                          </Link>
-                        </OverlayTrigger>
-                      ))}</td>
-                  </tr>
-            </tbody>
-        </Table>
+        <Usertable/>
         </Box>
             </Box>
         </Typography>
       </Box>
     </Box>
+    </div>
   );
 }
 

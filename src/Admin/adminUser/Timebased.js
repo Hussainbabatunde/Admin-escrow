@@ -24,6 +24,8 @@ import {MdPerson, MdDashboard} from 'react-icons/md';
 import {AiTwotoneEdit, AiFillDelete} from 'react-icons/ai';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+// import EnhancedTable from './EnhancedTable';
+import Newtable from "./Newtable"
 import creative from "../images/creative.jpeg";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -141,8 +143,11 @@ export default function Timebased(props) {
         <Toolbar />
         <Typography paragraph>
         <Box sx={{display:"flex", flexDirection:"column"}}>
-        <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="80vh">
-        <Table style={{width:"95%", marginLeft:"2.5%", marginTop:"20px"}}>
+        <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="60vh">
+
+        {/* TABLE COMMENTED OUT */}
+
+        {/* <Table style={{width:"95%", marginLeft:"2.5%", marginTop:"20px"}}>
             <thead>
             <th style={{color:"gray"}}>ID</th>
             <th style={{color:"gray"}}>Buyer's name</th>
@@ -152,18 +157,7 @@ export default function Timebased(props) {
                 <th style={{color:"gray"}}>Amount involve</th>
                 <th style={{color:"gray"}}>Disbursement status</th>
             </thead>
-            <tbody>
-                {/* {
-                    education.map((each, id)=>{
-                        return (
-                            <tr key={id}>
-                            <td>{each.certificate_name}</td>
-                            <td>{each.school_name}</td>
-                            <td>{each.year_earned}</td>
-                            </tr>
-                        )
-                    })
-                } */}
+            <tbody>                
                 <tr >
                 <td>1</td>
                   <td>Tunde</td>
@@ -172,9 +166,38 @@ export default function Timebased(props) {
                   <td>Cancelled</td>
                   <td>20,000</td>
                   <td>Cancelled</td>
-                  </tr>
+                </tr>
+                <tr >
+                <td>2</td>
+                  <td>Yemi</td>
+                  <td>Segun</td>
+                  <td>Tolu</td>
+                  <td>Pending</td>
+                  <td>20,000</td>
+                  <td>Pending</td>
+                </tr>
+                <tr >
+                <td>3</td>
+                  <td>Barb</td>
+                  <td>Seth</td>
+                  <td>Tolu</td>
+                  <td>Pending</td>
+                  <td>20,000</td>
+                  <td>Pending</td>
+                </tr>
+                <tr >
+                <td>4</td>
+                  <td>Talokan</td>
+                  <td>Greg</td>
+                  <td>Tolu</td>
+                  <td>Pending</td>
+                  <td>20,000</td>
+                  <td>Pending</td>
+                </tr>
             </tbody>
-        </Table>
+        </Table> */}
+        {/* <EnhancedTable /> */}
+        <Newtable />
         </Box>
             </Box>
         </Typography>
