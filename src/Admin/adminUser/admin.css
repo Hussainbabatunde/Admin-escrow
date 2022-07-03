@@ -25,6 +25,18 @@ element.style {
 .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
     flex-direction: column !important;
 }
+.btn-primary {
+    background-color:#216E8C !important; 
+    border: none !important;
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: #216E8C  !important;
+}
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #216E8C !important;
+    border-color: #216E8C !important;
+}
 @media (max-width: 600px) {
     .userdetails{
         width: 100%;

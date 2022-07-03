@@ -24,8 +24,9 @@ import {MdPerson, MdDashboard} from 'react-icons/md';
 import {AiTwotoneEdit, AiFillDelete} from 'react-icons/ai';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-
-
+import creative from "../images/creative.jpeg";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 const drawerWidth = 240;
@@ -53,7 +54,7 @@ export default function Completed(props) {
               <ListItemIcon style={{fontSize:"30px", color:"white"}}>
                 {index % 2 === 0 ? text.icon : text.icon}
               </ListItemIcon>
-              <ListItemText primary={text.words} />
+              <ListItemText primary={text.words} style={{textAlign:"center"}}/>
             </ListItemButton>
           </ListItem>
           </Link>
@@ -84,9 +85,22 @@ export default function Completed(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
+          {/* <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
             All Ongoing Transactions
+          </Typography> */}
+          <div style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+          <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
+          All Ongoing Transactions
           </Typography>
+          <div style={{display:"flex"}}>
+            <img src={creative} alt="profile pic" style={{width:"40px", height:"40px", borderRadius:"40px", marginRight:"10px"}}/>
+            <p style={{ marginTop:"10px", width:"160px"}}>Admininstrator name</p>
+            <DropdownButton id="dropdown-basic-button">
+            <Dropdown.Item href="#/action-2">Change profile picture</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+            </DropdownButton>
+          </div>
+          </div>
         </Toolbar>
       </AppBar>
       <Box

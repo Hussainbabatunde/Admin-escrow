@@ -24,6 +24,9 @@ import {ImCheckmark} from "react-icons/im"
 import {FiClock} from "react-icons/fi"
 import {GrTransaction} from "react-icons/gr"
 import "./admin.css";
+import creative from "../images/creative.jpeg";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 
@@ -52,7 +55,7 @@ export default function ResponsiveDrawer(props) {
               <ListItemIcon style={{fontSize:"30px", color:"white"}}>
                 {index % 2 === 0 ? text.icon : text.icon}
               </ListItemIcon>
-              <ListItemText primary={text.words} />
+              <ListItemText primary={text.words} style={{textAlign:"center"}}/>
             </ListItemButton>
           </ListItem>
           </Link>
@@ -83,9 +86,22 @@ export default function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
+          {/* <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
             User
+          </Typography> */}
+          <div style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+          <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
+            Dashboard
           </Typography>
+          <div style={{display:"flex"}}>
+            <img src={creative} alt="profile pic" style={{width:"40px", height:"40px", borderRadius:"40px", marginRight:"10px"}}/>
+            <p style={{ marginTop:"10px", width:"160px"}}>Admininstrator name</p>
+            <DropdownButton id="dropdown-basic-button">
+            <Dropdown.Item href="#/action-2">Change profile picture</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+            </DropdownButton>
+          </div>
+          </div>
         </Toolbar>
       </AppBar>
       <Box
