@@ -21,14 +21,15 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import creative from "../images/creative.jpeg";
 
 function createData(ID,
     BUYER,
     SELLER,
     WITNESS1,
     WITNESS2,
-    TRANSACTION,
-    AMOUNT,
+    PAYMENTSTATUS,
+    PAYABLEAMOUNT,
     DISBURSEMENT) {
   return {
     ID,
@@ -36,9 +37,8 @@ function createData(ID,
     SELLER,
     WITNESS1,
     WITNESS2,
-    TRANSACTION,
-    AMOUNT,
-    DISBURSEMENT
+    PAYMENTSTATUS,
+    PAYABLEAMOUNT
   };
 }
 // const Data = require('./data.json');
@@ -50,12 +50,12 @@ function createData(ID,
 
 
 const rows = [
-  createData(1, "tunde", "sola", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
-  createData(2, "peter", "daniel", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
-  createData(3, "tunde", "sola", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
-  createData(4, "kelvin", "sola", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
-  createData(5, "tunde", "partner", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
-  createData(6, "samuel", "sola", "emmmanuel", "samson", "ongoing", 20000, "ongoing"),
+  createData(1, "tunde", "sola", "emmmanuel", "samson", 'ongoing', 20000),
+  createData(2, "peter", "daniel", "emmmanuel", "samson", "completed", 4000),
+  createData(3, "tunde", "sola", "emmmanuel", "samson", "cancelled", 20000),
+  createData(4, "kelvin", "sola", "emmmanuel", "samson", "ongoing", 30000),
+  createData(5, "tunde", "partner", "emmmanuel", "samson", "ongoing", 150000),
+  createData(6, "samuel", "sola", "emmmanuel", "samson", "cancelled", 20000),
 
 ];
 
@@ -121,23 +121,17 @@ const headCells = [
     label: 'WITNESS 2',
   },
   {
-    id: 'transaction',
+    id: 'paymentstatus',
     numeric: true,
     disablePadding: false,
-    label: 'TRANSACTION',
+    label: 'PAYMENT STATUS',
   },
   {
-    id: 'amount',
+    id: 'payableamount',
     numeric: true,
     disablePadding: false,
-    label: 'AMOUNT',
-  },
-  {
-    id: 'disbursement',
-    numeric: true,
-    disablePadding: false,
-    label: 'DISBURSEMENT',
-  },
+    label: 'PAYABLE AMOUNT',
+  }
 ];
 
 function EnhancedTableHead(props) {
@@ -251,7 +245,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function Newtable() {
+export default function Alltable() {
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
@@ -371,9 +365,8 @@ export default function Newtable() {
                       <TableCell align="right">{row.SELLER}</TableCell>
                       <TableCell align="right">{row.WITNESS1}</TableCell>
                       <TableCell align="right">{row.WITNESS2}</TableCell>
-                      <TableCell align="right">{row.TRANSACTION}</TableCell>
-                      <TableCell align="right">{row.AMOUNT}</TableCell>
-                      <TableCell align="right">{row.DISBURSEMENT}</TableCell>
+                      <TableCell align="right">{row.PAYMENTSTATUS}</TableCell>
+                      <TableCell align="right">{row.PAYABLEAMOUNT}</TableCell>
 
 
                     </TableRow>

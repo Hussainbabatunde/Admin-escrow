@@ -48,7 +48,7 @@ export default function Completed(props) {
     <div style={{backgroundColor:"#216E8C", minHeight:"100vh"}}>
       
       <List>
-        {[{words: 'Dashboard', link:"/", icon: <MdDashboard />},{words: 'User', link:"/user", icon: <MdPerson />},{words: 'Completed Transactions', link:"/completed", icon: <AiOutlineTransaction />},{words: 'Ongoing Transactions', link:"/ongoing", icon: <AiOutlineTransaction />},{words: 'Cancelled Transactions', link:"/cancelled", icon: <AiOutlineTransaction />},{words: ' Transactions based on time range', link:"/timebased", icon: <AiOutlineTransaction />}].map((text, index) => (
+        {[{words: 'Dashboard', link:"/", icon: <MdDashboard />},{words: 'User', link:"/user", icon: <MdPerson />},{words: 'Completed transactions', link:"/completed", icon: <AiOutlineTransaction />},{words: 'Ongoing transactions', link:"/ongoing", icon: <AiOutlineTransaction />},{words: 'Cancelled transactions', link:"/cancelled", icon: <AiOutlineTransaction />},{words: 'All transactions', link:"/timebased", icon: <AiOutlineTransaction />}].map((text, index) => (
           <Link to={text.link} style={{textDecoration:"none", color:"white"}}>
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -91,7 +91,7 @@ export default function Completed(props) {
           </IconButton>
           <div style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
           <Typography variant="h6" noWrap component="div" sx={{fontSize:"25px"}}>
-            User
+            List of users
           </Typography>
           <div style={{display:"flex"}}>
             <img src={creative} alt="profile pic" style={{width:"40px", height:"40px", borderRadius:"40px", marginRight:"10px"}}/>
@@ -142,11 +142,18 @@ export default function Completed(props) {
         <Typography paragraph>
         <Box sx={{display:"flex", flexDirection:"column"}}>
         <Box backgroundColor='white' w='100%' borderRadius="10px" mt="20px" minHeight="80vh">
-          <Box sx={{display:"flex", justifyContent:"flex-end", marginTop:"20px", marginRight:"20px"}}>
-            
-            <Box sx={{display:"flex", flexDirection:"row"}}>
-              <input type="text"/>
-              <button style={{border:"none", color:"white", backgroundColor:"#216E8C"}}>Search</button>
+          <Box sx={{display:"flex", justifyContent:"space-around", marginTop:"20px", marginRight:"20px"}}>
+          <div>
+            <p style={{fontSize:"13px"}}>From:</p>
+            <input type='date' style={{outline:"none"}}/>
+          </div>
+          <div>
+            <p style={{fontSize:"13px"}}>To:</p>
+            <input type='date' style={{outline:"none"}}/>
+          </div>
+            <Box sx={{display:"flex", flexDirection:"row", marginTop:"20px"}}>
+              <input type="text" style={{outline:"none", height:"27px"}}/>
+              <button style={{border:"none", color:"white", backgroundColor:"#216E8C", height:"27px"}}>Search</button>
             </Box>
           </Box>
         <Usertable/>
